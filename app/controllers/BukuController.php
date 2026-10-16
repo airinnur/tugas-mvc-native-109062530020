@@ -29,17 +29,20 @@ class BukuController
         }
     }
 
-    public function edit(): void
-    {
-        $id = (int) ($_GET['id'] ?? 0);
-        $buku = $this->model->findById($id);
+      public function edit(): void
+   {
+       $id   = (int) ($_GET['id'] ?? 0);
+       $buku = $this->model->findById($id);
 
-        if (!$buku) {
-            http_response_code(404);
-            exit('Data buku tidak ditemukan.');
-        }
-        require __DIR__ . '/../views/buku/edit.php';
-    }
+       if (!$buku) {
+           http_response_code(404);
+           exit('Data buku tidak ditemukan.');
+       }
+
+       $errors = [];
+       $old    = $buku;
+       require __DIR__ . '/../views/buku/edit.php';
+   }
 
     public function update(): void
     {
