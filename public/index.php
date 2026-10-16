@@ -3,7 +3,7 @@
 session_start();
 
 require '../config/database.php';
-require '../app/models/Buku.php';
+require '../app/models/buku.php';
 require '../app/controllers/BukuController.php';
 
 try {
