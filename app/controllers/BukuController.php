@@ -9,10 +9,12 @@ class BukuController
         require __DIR__ . '/../views/buku/index.php';
     }
 
-    public function create(): void
-    {
-        require __DIR__ . '/../views/buku/create.php';
-    }
+      public function create(): void
+   {
+       $errors = [];
+       $old    = [];
+       require __DIR__ . '/../views/buku/create.php';
+   }
 
     public function store(): void
     {
