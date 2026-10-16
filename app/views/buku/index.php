@@ -8,7 +8,7 @@
 <body>
     <h2>Daftar Buku</h2>
 
-    <?php if ($pesan): ?>
+       <?php if (!empty($pesan)): ?>
         <p class="pesan <?= htmlspecialchars($pesan['jenis']) ?>">
             <?= htmlspecialchars($pesan['teks']) ?>
         </p>
