@@ -13,7 +13,7 @@ try {
     exit('Koneksi database gagal. Pastikan MySQL menyala dan perpustakaan.sql sudah diimpor.');
 }
 
-$model      = new Buku($db);
+$model      = new buku($db);
 $controller = new BukuController($model);
 
 $page   = $_GET['page']   ?? 'buku';
@@ -27,7 +27,6 @@ if ($page !== 'buku') {
 match ($action) {
     'index'  => $controller->index(),
     'create' => $controller->create(),
-    'store'  => $controller->store(),
     'edit'   => $controller->edit(),
     'update' => $controller->update(),
     'delete' => $controller->delete(),
