@@ -6,7 +6,8 @@ class Buku
     public function getAll(): array
     {
         $stmt = $this->db->query(
-            'SELECT id, judul, penulis, penerbit, tahun_terbit, isbn FROM buku ORDER BY judul'
+               'SELECT id, isbn, judul, penulis, penerbit, tahun_terbit, stok
+            FROM buku ORDER BY judul'
         );
         return $stmt->fetchAll();
     }
@@ -26,7 +27,8 @@ class Buku
         public function findById(int $id): array|false
     {
         $stmt = $this->db->prepare(
-            'SELECT id, judul, penulis, penerbit, tahun_terbit, isbn FROM buku WHERE id = :id'
+             'SELECT id, isbn, judul, penulis, penerbit, tahun_terbit, stok
+            FROM buku WHERE id = :id'
         );
         $stmt->execute([':id' => $id]);
         return $stmt->fetch();
