@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Tambah Buku</title>
+    <head>
+    <meta charset="UTF-8">
+    <title>Daftar Buku</title>
+    <link rel="stylesheet" href="style.css">
+</head>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
